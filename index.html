@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jeyesh Vishnu S — Senior Software Engineer specializing in AI/ML, document intelligence, graph neural networks, and Python/C# backend architecture. Based in Madurai, India.">
+  <meta name="theme-color" content="#F4F4F1">
+  <title>Jeyesh Vishnu S — Senior Software Engineer | Document Intelligence & Backend</title>
+
+  <!-- Google Fonts: Bricolage Grotesque (Headline) & JetBrains Mono (Technical/Editorial) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="blueprint-theme">
+  <!-- Skip link for keyboard accessibility -->
+  <a href="#main-content" class="sr-only-focusable skip-to-content">Skip to content</a>
+
+  <!-- =========================================================================
+       CUSTOM CURSOR & MEASUREMENT HUD
+       ========================================================================= -->
+  <div class="custom-cursor" id="custom-cursor" aria-hidden="true">
+    <div class="cursor-ring"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-crosshair-x"></div>
+    <div class="cursor-crosshair-y"></div>
+    <div class="cursor-readout" id="cursor-readout">X:0000 Y:0000</div>
+  </div>
+
+  <!-- =========================================================================
+       GLOBAL X-RAY BLUEPRINT OVERLAY
+       ========================================================================= -->
+  <div class="xray-grid-overlay" id="xray-grid" aria-hidden="true">
+    <div class="xray-columns">
+      <div class="xray-col"><span>COL 01</span></div>
+      <div class="xray-col"><span>COL 02</span></div>
+      <div class="xray-col"><span>COL 03</span></div>
+      <div class="xray-col"><span>COL 04</span></div>
+      <div class="xray-col"><span>COL 05</span></div>
+      <div class="xray-col"><span>COL 06</span></div>
+      <div class="xray-col"><span>COL 07</span></div>
+      <div class="xray-col"><span>COL 08</span></div>
+      <div class="xray-col"><span>COL 09</span></div>
+      <div class="xray-col"><span>COL 10</span></div>
+      <div class="xray-col"><span>COL 11</span></div>
+      <div class="xray-col"><span>COL 12</span></div>
+    </div>
+    <div class="xray-watermark">[X-RAY BLUEPRINT MODE · 12 COLS · 24PX GUTTER · SYSTEM ACTIVE]</div>
+  </div>
+
+  <!-- =========================================================================
+       INTRO SEQUENCE: "THE BUILD" (01 — 07 STAGES)
+       ========================================================================= -->
+  <aside class="build-intro-overlay" id="build-intro" aria-label="Animated Homepage Build Introduction">
+    <!-- Top Bar Controls inside Intro -->
+    <div class="build-intro-topbar">
+      <div class="build-brand-tag">
+        <span class="tag-label">SYSTEM SPEC</span>
+        <span class="tag-title">FROM RAW DOCUMENT TO STRUCTURED INTELLIGENCE</span>
+      </div>
+
+      <!-- Large Faint Progress Counter (001% → 100%) -->
+      <div class="build-progress-wrap">
+        <span class="build-counter" id="build-counter" aria-live="polite">001%</span>
+        <span class="build-progress-label">BUILD SEQUENCE</span>
+      </div>
+
+      <button type="button" class="build-skip-btn" id="build-skip-btn">
+        <span>Skip the build</span>
+        <span class="skip-arrow">↓</span>
+      </button>
+    </div>
+
+    <!-- Intro Visual Stage Canvas & Graphic Layers -->
+    <div class="build-stage-viewport" id="build-stage-viewport">
+      <canvas id="intro-canvas" class="intro-canvas" width="1440" height="900"></canvas>
+
+      <!-- Stage 1 & 2: Architectural Guideline Annotations -->
+      <div class="intro-guides-layer" id="intro-guides-layer">
+        <div class="intro-h-line line-top"><span class="coord-tag">y: 120px [top-gutter]</span></div>
+        <div class="intro-h-line line-bottom"><span class="coord-tag">y: 780px [baseline]</span></div>
+        <div class="intro-v-line line-left"><span class="coord-tag">x: 80px [margin-l]</span></div>
+        <div class="intro-v-line line-right"><span class="coord-tag">x: 1360px [margin-r]</span></div>
+        <div class="intro-crosshair-center" id="intro-crosshair">
+          <div class="ch-circle"></div>
+          <span class="ch-label">TARGET: [x: 50% · y: 50%]</span>
+        </div>
+      </div>
+
+      <!-- Stage 4: Typography Spec Layer -->
+      <div class="intro-typeface-layer" id="intro-typeface-layer">
+        <div class="spec-dimension-box">
+          <div class="spec-ruler-top"><span>clamp(3rem, 7vw, 6.5rem) · 920px</span></div>
+          <div class="spec-headline-preview">Research to reliable production.</div>
+          <div class="spec-meta-tag">
+            <span>FAMILY: Bricolage Grotesque</span>
+            <span>WEIGHT: 800</span>
+            <span>KERNING: -0.03em</span>
+            <span>LEADING: 0.95</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage 5: Colour Palette Swatches Layer -->
+      <div class="intro-palette-layer" id="intro-palette-layer">
+        <div class="palette-swatch swatch-ink">
+          <div class="swatch-color" style="background: #121214;"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">Ink</span>
+            <span class="swatch-hex">#121214</span>
+            <span class="swatch-role">Primary Type & Structure</span>
+          </div>
+        </div>
+        <div class="palette-swatch swatch-paper">
+          <div class="swatch-color" style="background: #F4F4F1; border: 1px solid rgba(18,18,20,0.15);"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">Paper</span>
+            <span class="swatch-hex">#F4F4F1</span>
+            <span class="swatch-role">Substrate Warm Neutral</span>
+          </div>
+        </div>
+        <div class="palette-swatch swatch-signal">
+          <div class="swatch-color" style="background: #E8203A;"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">Signal</span>
+            <span class="swatch-hex">#E8203A</span>
+            <span class="swatch-role">Attention & Active Nodes</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage 6: Wireframe X-Cross Placeholder Layer -->
+      <div class="intro-wireframe-layer" id="intro-wireframe-layer">
+        <div class="wire-box wire-hero">
+          <div class="wire-cross">✕</div>
+          <span class="wire-tag">[HERO_MODULE_BOUNDS]</span>
+        </div>
+        <div class="wire-box wire-work">
+          <div class="wire-cross">✕</div>
+          <span class="wire-tag">[WORK_GRID_BOUNDS]</span>
+        </div>
+        <div class="wire-box wire-services">
+          <div class="wire-cross">✕</div>
+          <span class="wire-tag">[SERVICE_NODES_BOUNDS]</span>
+        </div>
+      </div>
+
+      <!-- Stage 7: Final Settle Transition -->
+      <div class="intro-settle-layer" id="intro-settle-layer">
+        <div class="settle-badge">SYSTEM STABILIZED · SOLIDIFYING HOMEPAGE</div>
+      </div>
+    </div>
+
+    <!-- Bottom Left Monospace Caption (01 — 07 Stages) -->
+    <div class="build-stage-caption" id="build-stage-caption">
+      <div class="stage-index-num" id="stage-num">01 — 07</div>
+      <div class="stage-content">
+        <h2 class="stage-title" id="stage-title">A line</h2>
+        <p class="stage-sentence" id="stage-sentence">Thin guides draw across a blank page with measured coordinates.</p>
+      </div>
+      <div class="stage-indicator-bars">
+        <span class="stage-bar active" data-step="1"></span>
+        <span class="stage-bar" data-step="2"></span>
+        <span class="stage-bar" data-step="3"></span>
+        <span class="stage-bar" data-step="4"></span>
+        <span class="stage-bar" data-step="5"></span>
+        <span class="stage-bar" data-step="6"></span>
+        <span class="stage-bar" data-step="7"></span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       SITE HEADER / TOP BAR
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <!-- Wordmark Logo (Left) -->
+      <div class="header-left">
+        <a href="#hero" class="logo-wordmark" aria-label="Jeyesh Vishnu S Homepage">
+          <span class="wordmark-text">jeyesh</span><span class="signal-dot">.</span>
+        </a>
+        <div class="location-status">
+          <span class="pulse-indicator"></span>
+          <span class="status-text">MADURAI, IN · AI/ML SR. ENG</span>
+          <!-- EASTER EGG #1: Hidden in location dot -->
+          <button type="button" class="easter-egg-dot" data-egg-id="1" aria-label="Discovered system node 1 of 8" title="System node detected"></button>
+        </div>
+      </div>
+
+      <!-- "The Build" Progress / Status Pill (Center) -->
+      <div class="header-center">
+        <div class="build-status-pill" id="nav-build-pill" title="System Assembly Status">
+          <span class="pill-label">STATUS:</span>
+          <span class="pill-status-dot"></span>
+          <span class="pill-val" id="nav-build-text">SOLIDIFIED · 100%</span>
+          <button type="button" class="replay-build-btn" id="replay-build-btn" title="Replay Animated Build Sequence">REPLAY</button>
+        </div>
+      </div>
+
+      <!-- Actions (Right): Easter Egg Tracker + X-ray Toggle + Let's Talk -->
+      <div class="header-right">
+        <!-- Easter Egg Counter Pill -->
+        <div class="egg-tracker" id="egg-tracker" title="Find 8 hidden red nodes across the blueprints">
+          <span class="egg-symbol">●</span>
+          <span class="egg-counter-text"><strong id="egg-count">0</strong>/8</span>
+          <span class="egg-label">NODES</span>
+        </div>
+
+        <!-- X-ray Blueprint Toggle Button -->
+        <button type="button" class="xray-toggle-btn" id="xray-toggle" aria-pressed="false" title="Toggle technical X-ray blueprint overlay (Shortcut: Key X)">
+          <span class="xray-icon">⌖</span>
+          <span class="xray-text">X-RAY</span>
+          <span class="xray-key-hint">[X]</span>
+        </button>
+
+        <!-- Primary CTA: Let's Talk Pill Button -->
+        <a href="#contact" class="pill-btn pill-btn-primary nav-cta">
+          <span>Let's talk</span>
+          <span class="btn-arrow-circle">
+            <svg viewBox="0 0 16 16" width="12" height="12" fill="none" aria-hidden="true">
+              <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN PORTFOLIO CONTENT
+       ========================================================================= -->
+  <main id="main-content">
+
+    <!-- -----------------------------------------------------------------------
+         01. HERO SECTION
+         ----------------------------------------------------------------------- -->
+    <section class="section section-hero" id="hero" aria-labelledby="hero-heading">
+      <!-- Architectural Dimension Hairline & Caliper Header -->
+      <div class="caliper-bar">
+        <div class="caliper-tick-l">+ [01 // ROOT_NODE]</div>
+        <div class="caliper-dimension">DIM: 100VW × 100VH · GRID: 12-COL · COORD: 9.9252° N, 78.1198° E</div>
+        <!-- EASTER EGG #2: Hidden inside hero caliper right marker -->
+        <div class="caliper-tick-r">
+          <button type="button" class="easter-egg-dot" data-egg-id="2" aria-label="Discovered system node 2 of 8" title="System node detected"></button>
+          <span>[W: 100%] +</span>
+        </div>
+      </div>
+
+      <div class="hero-container">
+        <div class="hero-grid">
+          <!-- Left: Hero Editorial & Typography -->
+          <div class="hero-content">
+            <div class="hero-pretitle">
+              <span class="sys-badge">SENIOR SOFTWARE ENGINEER</span>
+              <span class="sys-sub">NOVACIS DIGITAL · CORE IDP & AI PLATFORMS</span>
+            </div>
+
+            <h1 class="hero-headline" id="hero-heading">
+              Research to reliable production<span class="signal-period">.</span>
+            </h1>
+
+            <p class="hero-subhead">
+              Senior Software Engineer building intelligent document systems: graph neural networks, LLM agents, and clean backend architecture.
+            </p>
+
+            <!-- Buttons: "Let's talk" & "See the work" -->
+            <div class="hero-actions">
+              <a href="#contact" class="pill-btn pill-btn-primary magnetic-btn">
+                <span>Let's talk</span>
+                <span class="btn-arrow-circle">
+                  <svg viewBox="0 0 16 16" width="12" height="12" fill="none" aria-hidden="true">
+                    <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+
+              <a href="#work" class="pill-btn pill-btn-secondary magnetic-btn">
+                <span>See the work</span>
+                <span class="btn-arrow-circle">
+                  <svg viewBox="0 0 16 16" width="12" height="12" fill="none" aria-hidden="true">
+                    <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+
+            <!-- Metadata specs -->
+            <div class="hero-specs-grid">
+              <div class="spec-unit">
+                <span class="spec-label">CORE DOMAIN</span>
+                <span class="spec-value">Graph-Based Document Intelligence</span>
+              </div>
+              <div class="spec-unit">
+                <span class="spec-label">ARCHITECTURE</span>
+                <span class="spec-value">Clean / Onion / Hexagonal (C# · Python)</span>
+              </div>
+              <div class="spec-unit">
+                <span class="spec-label">ORCHESTRATION</span>
+                <span class="spec-value">LangGraph Agents · pgvector · OTel</span>
+              </div>
+              <div class="spec-unit">
+                <span class="spec-label">LOCATION</span>
+                <span class="spec-value">Madurai, India (Remote & Hybrid)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Document Intelligence Visualizer (GAT Engine) -->
+          <div class="hero-visual-card">
+            <div class="card-caliper-header">
+              <span class="caliper-tag">[FIG. 01 — GRAPH ATTENTION TOPOLOGY]</span>
+              <span class="caliper-status">LIVE INTERACTIVE MESH</span>
+            </div>
+
+            <div class="hero-gat-canvas-wrap">
+              <canvas id="hero-gat-canvas" width="560" height="420" aria-label="Interactive Graph Attention Network Document Simulation"></canvas>
+              <div class="canvas-annotation-overlay">
+                <div class="anno-badge">METAPHOR: RAW DOCUMENT → STRUCTURED INTELLIGENCE</div>
+                <div class="anno-hint">Hover / Drag to perturb node attention weights</div>
+              </div>
+            </div>
+
+            <div class="card-caliper-footer">
+              <div class="stat-pill"><span class="k">NODES:</span> <span class="v" id="hero-node-count">18</span></div>
+              <div class="stat-pill"><span class="k">EDGES:</span> <span class="v" id="hero-edge-count">42</span></div>
+              <div class="stat-pill"><span class="k">ATTENTION:</span> <span class="v">α(i,j) Softmax</span></div>
+              <div class="stat-pill"><span class="k">LAYOUT:</span> <span class="v">Template-Free</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         02. WORK SECTION (SELECTED PROJECTS)
+         ----------------------------------------------------------------------- -->
+    <section class="section section-work" id="work" aria-labelledby="work-heading">
+      <!-- Self-Measuring Caliper Section Header -->
+      <div class="section-measuring-header" data-measure-target="work-container">
+        <div class="measure-bar">
+          <span class="measure-marker">+</span>
+          <span class="measure-title">02 // WORK — SELECTED PROJECTS & GRAPH ARCHITECTURE</span>
+          <span class="measure-rule"></span>
+          <span class="measure-dim" id="work-dim">[w: 100% · 7 PRODUCTION SYSTEMS]</span>
+          <span class="measure-marker">+</span>
+        </div>
+      </div>
+
+      <div class="container" id="work-container">
+        <header class="section-intro">
+          <h2 class="section-headline" id="work-heading">Engineered from raw tokens to resilient models.</h2>
+          <p class="section-lede">
+            Proprietary document intelligence engines, Graph Neural Networks, and production backend scaffolding deployed at Novacis Digital.
+          </p>
+        </header>
+
+        <!-- Project Cards Grid -->
+        <div class="projects-grid">
+
+          <!-- 1. AnyDoc -->
+          <article class="project-card" data-project="anydoc">
+            <div class="project-card-header">
+              <div class="project-id">
+                <span class="id-badge">PROJECT 01</span>
+                <!-- EASTER EGG #3: Hidden in Project 01 corner -->
+                <button type="button" class="easter-egg-dot" data-egg-id="3" aria-label="Discovered system node 3 of 8" title="System node detected"></button>
+              </div>
+              <div class="project-tech-tags">
+                <span class="tag">PyTorch Geometric</span>
+                <span class="tag">GAT</span>
+                <span class="tag">Template-Free</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">AnyDoc</h3>
+              <p class="project-summary">
+                GAT-based any-document classification and extraction engine. Eliminates rigid OCR templates by learning document topological relationships and spatial graphs across heterogeneous visual layouts.
+              </p>
+            </div>
+
+            <!-- Mini Interactive Diagram: GAT Attention Matrix -->
+            <div class="project-diagram-wrap">
+              <div class="diagram-label">[DIAGRAM 1.1: GAT ATTENTION EDGES]</div>
+              <div class="diagram-display mini-gat-display" data-diagram="anydoc">
+                <svg viewBox="0 0 400 180" class="diagram-svg" aria-hidden="true">
+                  <line x1="60" y1="50" x2="160" y2="40" class="edge-line pulse-edge" />
+                  <line x1="60" y1="50" x2="140" y2="120" class="edge-line" />
+                  <line x1="160" y1="40" x2="280" y2="50" class="edge-line pulse-edge" />
+                  <line x1="140" y1="120" x2="280" y2="130" class="edge-line" />
+                  <line x1="280" y1="50" x2="340" y2="90" class="edge-line pulse-edge" />
+                  <line x1="280" y1="130" x2="340" y2="90" class="edge-line" />
+                  <line x1="160" y1="40" x2="140" y2="120" class="edge-line cross-edge" />
+
+                  <!-- Nodes -->
+                  <g class="doc-node" transform="translate(60, 50)"><circle r="12" class="node-circle" /><text y="4" class="node-text">HDR</text></g>
+                  <g class="doc-node" transform="translate(160, 40)"><circle r="14" class="node-circle active-node" /><text y="4" class="node-text">ENT</text></g>
+                  <g class="doc-node" transform="translate(140, 120)"><circle r="12" class="node-circle" /><text y="4" class="node-text">VAL</text></g>
+                  <g class="doc-node" transform="translate(280, 50)"><circle r="14" class="node-circle active-node" /><text y="4" class="node-text">KEY</text></g>
+                  <g class="doc-node" transform="translate(280, 130)"><circle r="12" class="node-circle" /><text y="4" class="node-text">SUM</text></g>
+                  <g class="doc-node" transform="translate(340, 90)"><circle r="16" class="node-circle signal-node" /><text y="4" class="node-text">CLASS</text></g>
+                </svg>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <span class="project-impact">Zero-Shot / Template-Free Generalization</span>
+              <span class="project-caliper">EXTRACT: MULTI-PAGE · GATv2</span>
+            </div>
+          </article>
+
+          <!-- 2. GNN Invoice Extraction -->
+          <article class="project-card" data-project="invoice">
+            <div class="project-card-header">
+              <div class="project-id"><span class="id-badge">PROJECT 02</span></div>
+              <div class="project-tech-tags">
+                <span class="tag">PyTorch</span>
+                <span class="tag">GNN</span>
+                <span class="tag">Table Parsing</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">GNN Invoice Extraction</h3>
+              <p class="project-summary">
+                Vendor, line items, and totals extraction from complex, non-standard invoice layouts. Connects OCR tokens via spatial proximity and contextual embeddings to accurately resolve ambiguous tabular structures.
+              </p>
+            </div>
+
+            <!-- Mini Diagram: Invoice Bounding Box Topology -->
+            <div class="project-diagram-wrap">
+              <div class="diagram-label">[DIAGRAM 1.2: BOUNDING BOX EXTRACTION MESH]</div>
+              <div class="diagram-display mini-invoice-display" data-diagram="invoice">
+                <svg viewBox="0 0 400 180" class="diagram-svg" aria-hidden="true">
+                  <!-- Invoice wireframe container -->
+                  <rect x="30" y="20" width="340" height="140" class="inv-rect" />
+                  <!-- Bounding boxes -->
+                  <rect x="50" y="35" width="90" height="20" class="bbox-box" />
+                  <text x="56" y="49" class="bbox-text">VENDOR: ACME</text>
+
+                  <rect x="250" y="35" width="100" height="20" class="bbox-box" />
+                  <text x="256" y="49" class="bbox-text">DATE: 2026-08</text>
+
+                  <!-- Line items -->
+                  <rect x="50" y="70" width="140" height="18" class="bbox-box line-item" />
+                  <text x="56" y="83" class="bbox-text">ITEM: COMPUTE CLUSTER</text>
+                  <rect x="250" y="70" width="70" height="18" class="bbox-box" />
+                  <text x="256" y="83" class="bbox-text">$4,850.00</text>
+
+                  <rect x="50" y="94" width="140" height="18" class="bbox-box line-item" />
+                  <text x="56" y="107" class="bbox-text">ITEM: VECTOR STORAGE</text>
+                  <rect x="250" y="94" width="70" height="18" class="bbox-box" />
+                  <text x="256" y="107" class="bbox-text">$1,200.00</text>
+
+                  <!-- Total line with signal indicator -->
+                  <rect x="220" y="125" width="130" height="22" class="bbox-box total-box" />
+                  <text x="228" y="140" class="bbox-text total-text">TOTAL: $6,050.00</text>
+
+                  <!-- Connecting relation lines -->
+                  <path d="M140 45 L250 45" class="relation-line" />
+                  <path d="M190 79 L250 79" class="relation-line" />
+                  <path d="M190 103 L250 103" class="relation-line" />
+                  <path d="M320 112 L320 125" class="relation-line pulse-edge" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <span class="project-impact">High-Precision Line-Item & Total Extraction</span>
+              <span class="project-caliper">SPATIAL OCR · ZERO TEMPLATES</span>
+            </div>
+          </article>
+
+          <!-- 3. Neighbour Detection -->
+          <article class="project-card" data-project="neighbour">
+            <div class="project-card-header">
+              <div class="project-id"><span class="id-badge">PROJECT 03</span></div>
+              <div class="project-tech-tags">
+                <span class="tag">Computational Geometry</span>
+                <span class="tag">Spatial Graphs</span>
+                <span class="tag">Python</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">Neighbour Detection</h3>
+              <p class="project-summary">
+                High-performance graph engine modelling spatial relationships between document elements. Evaluates 2D Euclidean distance, horizontal/vertical alignment beams, and angular visibility to construct graph topologies for downstream GNNs.
+              </p>
+            </div>
+
+            <!-- Mini Diagram: Spatial Neighbor Radar -->
+            <div class="project-diagram-wrap">
+              <div class="diagram-label">[DIAGRAM 1.3: 2D EUCLIDEAN SPATIAL NEIGHBORS]</div>
+              <div class="diagram-display mini-radar-display" data-diagram="neighbour">
+                <svg viewBox="0 0 400 180" class="diagram-svg" aria-hidden="true">
+                  <!-- Radar concentric circles -->
+                  <circle cx="200" cy="90" r="30" class="radar-circle" />
+                  <circle cx="200" cy="90" r="60" class="radar-circle" />
+                  <circle cx="200" cy="90" r="85" class="radar-circle" />
+
+                  <!-- Central Pivot -->
+                  <circle cx="200" cy="90" r="8" class="signal-node" />
+                  <text x="212" y="94" class="radar-tag">PIVOT (x, y)</text>
+
+                  <!-- Nearest Neighbors -->
+                  <line x1="200" y1="90" x2="150" y2="60" class="radar-ray pulse-edge" />
+                  <circle cx="150" cy="60" r="5" class="node-circle active-node" />
+                  <text x="110" y="55" class="radar-dim">d₁ = 58px</text>
+
+                  <line x1="200" y1="90" x2="260" y2="50" class="radar-ray pulse-edge" />
+                  <circle cx="260" cy="50" r="5" class="node-circle active-node" />
+                  <text x="268" y="50" class="radar-dim">d₂ = 72px</text>
+
+                  <line x1="200" y1="90" x2="240" y2="140" class="radar-ray" />
+                  <circle cx="240" cy="140" r="5" class="node-circle" />
+                  <text x="248" y="145" class="radar-dim">d₃ = 64px</text>
+
+                  <line x1="200" y1="90" x2="130" y2="120" class="radar-ray" />
+                  <circle cx="130" cy="120" r="5" class="node-circle" />
+                  <text x="85" y="125" class="radar-dim">d₄ = 76px</text>
+                </svg>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <span class="project-impact">Sub-millisecond Spatial Edge Generation</span>
+              <span class="project-caliper">K-NN · VISIBILITY GRAPH</span>
+            </div>
+          </article>
+
+          <!-- 4. IFP-SF -->
+          <article class="project-card" data-project="ifp">
+            <div class="project-card-header">
+              <div class="project-id"><span class="id-badge">PROJECT 04</span></div>
+              <div class="project-tech-tags">
+                <span class="tag">OCR</span>
+                <span class="tag">Layout Geometry</span>
+                <span class="tag">Form Intelligence</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">IFP-SF</h3>
+              <p class="project-summary">
+                Structured-form processing pipeline combining raw OCR bounding primitives, layout geometry constraints, and graph relationships to bind key-value pairs in multi-column, dense administrative forms.
+              </p>
+            </div>
+
+            <!-- Mini Diagram: Key-Value Pairing Flow -->
+            <div class="project-diagram-wrap">
+              <div class="diagram-label">[DIAGRAM 1.4: KEY-VALUE GEOMETRIC PAIRING]</div>
+              <div class="diagram-display mini-kv-display" data-diagram="ifp">
+                <svg viewBox="0 0 400 180" class="diagram-svg" aria-hidden="true">
+                  <!-- Column 1: Key Boxes -->
+                  <g transform="translate(40, 30)">
+                    <rect width="120" height="28" class="form-k-box" />
+                    <text x="12" y="18" class="form-text">Full Legal Name</text>
+                  </g>
+                  <g transform="translate(40, 75)">
+                    <rect width="120" height="28" class="form-k-box" />
+                    <text x="12" y="18" class="form-text">Tax ID / PAN</text>
+                  </g>
+                  <g transform="translate(40, 120)">
+                    <rect width="120" height="28" class="form-k-box" />
+                    <text x="12" y="18" class="form-text">Billing Country</text>
+                  </g>
+
+                  <!-- Dynamic Pairing Connectors -->
+                  <path d="M160 44 C 190 44, 210 44, 240 44" class="pair-connector pulse-edge" />
+                  <path d="M160 89 C 190 89, 210 89, 240 89" class="pair-connector pulse-edge" />
+                  <path d="M160 134 C 190 134, 210 134, 240 134" class="pair-connector pulse-edge" />
+
+                  <!-- Column 2: Value Boxes -->
+                  <g transform="translate(240, 30)">
+                    <rect width="130" height="28" class="form-v-box" />
+                    <text x="12" y="18" class="form-text-v">Jeyesh Vishnu S</text>
+                  </g>
+                  <g transform="translate(240, 75)">
+                    <rect width="130" height="28" class="form-v-box" />
+                    <text x="12" y="18" class="form-text-v">AAAPJ2026K</text>
+                  </g>
+                  <g transform="translate(240, 120)">
+                    <rect width="130" height="28" class="form-v-box" />
+                    <text x="12" y="18" class="form-text-v">India [IN]</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <span class="project-impact">Dense Form Disambiguation & Key-Value Association</span>
+              <span class="project-caliper">LAYOUT GEOMETRY · GRAPH RELS</span>
+            </div>
+          </article>
+
+          <!-- 5. Convo AI Search -->
+          <article class="project-card" data-project="convo">
+            <div class="project-card-header">
+              <div class="project-id"><span class="id-badge">PROJECT 05</span></div>
+              <div class="project-tech-tags">
+                <span class="tag">LangGraph</span>
+                <span class="tag">SQL AST Parsing</span>
+                <span class="tag">pgvector</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">Convo AI Search</h3>
+              <p class="project-summary">
+                Natural language to SQL conversion engine with LangChain and LangGraph agent supervisor orchestration. Integrates formal SQL syntax tree parsing, deterministic schema grounding, and semantic vector search.
+              </p>
+            </div>
+
+            <!-- Mini Diagram: Agentic Supervisor Loop -->
+            <div class="project-diagram-wrap">
+              <div class="diagram-label">[DIAGRAM 1.5: AGENT SUPERVISOR & SQL AST VERIFICATION]</div>
+              <div class="diagram-display mini-agent-display" data-diagram="convo">
+                <svg viewBox="0 0 400 180" class="diagram-svg" aria-hidden="true">
+                  <!-- Query Input -->
+                  <rect x="20" y="70" width="85" height="40" class="agent-box" />
+                  <text x="28" y="88" class="agent-text-sm">NL QUERY</text>
+                  <text x="28" y="102" class="agent-sub">Input Prompt</text>
+
+                  <!-- Supervisor -->
+                  <rect x="135" y="60" width="95" height="60" class="agent-box-supervisor" />
+                  <text x="145" y="82" class="agent-text-sm">SUPERVISOR</text>
+                  <text x="145" y="96" class="agent-sub">LangGraph Agent</text>
+                  <text x="145" y="108" class="agent-sub">Tool Dispatch</text>
+
+                  <!-- Branches -->
+                  <path d="M105 90 L135 90" class="agent-flow pulse-edge" />
+                  <path d="M230 75 L280 45" class="agent-flow" />
+                  <path d="M230 105 L280 135" class="agent-flow" />
+
+                  <!-- SQL AST node -->
+                  <rect x="280" y="25" width="100" height="40" class="agent-box" />
+                  <text x="288" y="42" class="agent-text-sm">SQL TREE PARSER</text>
+                  <text x="288" y="56" class="agent-sub">AST Validation</text>
+
+                  <!-- pgvector node -->
+                  <rect x="280" y="115" width="100" height="40" class="agent-box" />
+                  <text x="288" y="132" class="agent-text-sm">VECTOR SEARCH</text>
+                  <text x="288" y="146" class="agent-sub">PostgreSQL pgvector</text>
+                </svg>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <span class="project-impact">Safe, Syntactically Validated NL-to-SQL at Scale</span>
+              <span class="project-caliper">DETERMINISTIC GUARDRAILS · AGENTIC</span>
+            </div>
+          </article>
+
+          <!-- 6. QDX and WTC Lite -->
+          <article class="project-card" data-project="qdx">
+            <div class="project-card-header">
+              <div class="project-id"><span class="id-badge">PROJECT 06</span></div>
+              <div class="project-tech-tags">
+                <span class="tag">Hybrid AI</span>
+                <span class="tag">Fuzzy Matching</span>
+                <span class="tag">Custom Vectors</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">QDX and WTC Lite</h3>
+              <p class="project-summary">
+                Rule-augmented extraction engine pairing custom dense vector representations with deterministic rule trees for fuzzy entity matching, providing ultra-low-latency lookups on constrained enterprise documents.
+              </p>
+            </div>
+
+            <!-- Mini Diagram: Rule + Vector Hybrid Dual Pipeline -->
+            <div class="project-diagram-wrap">
+              <div class="diagram-label">[DIAGRAM 1.6: DUAL PIPELINE SIMILARITY COUPLING]</div>
+              <div class="diagram-display mini-hybrid-display" data-diagram="qdx">
+                <svg viewBox="0 0 400 180" class="diagram-svg" aria-hidden="true">
+                  <!-- Pipe 1: Rules -->
+                  <rect x="30" y="30" width="150" height="36" class="pipe-box" />
+                  <text x="42" y="52" class="pipe-text">DETERMINISTIC RULES</text>
+                  <!-- Pipe 2: Custom Vectors -->
+                  <rect x="30" y="110" width="150" height="36" class="pipe-box" />
+                  <text x="42" y="132" class="pipe-text">DENSE EMBEDDINGS</text>
+
+                  <!-- Convergence -->
+                  <path d="M180 48 L250 88" class="pipe-flow" />
+                  <path d="M180 128 L250 92" class="pipe-flow" />
+
+                  <!-- Match Engine Core -->
+                  <rect x="250" y="65" width="125" height="50" class="pipe-core" />
+                  <text x="262" y="88" class="pipe-core-title">FUZZY MATCHER</text>
+                  <text x="262" y="102" class="pipe-core-sub">SCORE: 0.984 (CONF)</text>
+                </svg>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <span class="project-impact">Hybrid Neural & Rule-Based Entity Grounding</span>
+              <span class="project-caliper">LOW-LATENCY EMBEDDINGS · FAST</span>
+            </div>
+          </article>
+
+          <!-- 7. nd-sdk -->
+          <article class="project-card project-card-wide" data-project="ndsdk">
+            <div class="project-card-header">
+              <div class="project-id">
+                <span class="id-badge">PROJECT 07</span>
+                <!-- EASTER EGG #4: Hidden in nd-sdk header -->
+                <button type="button" class="easter-egg-dot" data-egg-id="4" aria-label="Discovered system node 4 of 8" title="System node detected"></button>
+              </div>
+              <div class="project-tech-tags">
+                <span class="tag">Python Scaffolding</span>
+                <span class="tag">Multi-Cloud Storage</span>
+                <span class="tag">OpenTelemetry</span>
+                <span class="tag">Flask</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">nd-sdk</h3>
+              <p class="project-summary">
+                Published Python microservice scaffolding tool generated directly from declarative YAML manifests. Bootstraps production microservices configured with unified storage adapters (AWS S3, Azure Blob, MinIO), standardized logging, and end-to-end OpenTelemetry distributed tracing spans.
+              </p>
+            </div>
+
+            <!-- Mini Diagram: YAML to Multi-Cloud Microservice Architecture -->
+            <div class="project-diagram-wrap">
+              <div class="diagram-label">[DIAGRAM 1.7: DECLARATIVE SPEC TO RUNTIME SERVICES]</div>
+              <div class="diagram-display wide-sdk-display" data-diagram="ndsdk">
+                <svg viewBox="0 0 840 180" class="diagram-svg" aria-hidden="true">
+                  <!-- Spec input -->
+                  <rect x="30" y="40" width="160" height="100" class="spec-file-box" />
+                  <text x="46" y="65" class="spec-file-title">service-spec.yaml</text>
+                  <text x="46" y="85" class="spec-code-line">name: ai-doc-engine</text>
+                  <text x="46" y="103" class="spec-code-line">telemetry: otel-grpc</text>
+                  <text x="46" y="121" class="spec-code-line">storage: [s3, azure, minio]</text>
+
+                  <path d="M190 90 L260 90" class="agent-flow pulse-edge" />
+
+                  <!-- nd-sdk Generator Box -->
+                  <rect x="260" y="50" width="180" height="80" class="generator-box" />
+                  <text x="278" y="80" class="gen-title">nd-sdk GENERATOR</text>
+                  <text x="278" y="98" class="gen-sub">Template Scaffolding</text>
+                  <text x="278" y="114" class="gen-sub">Boilerplate Elimination</text>
+
+                  <path d="M440 70 L510 50" class="agent-flow" />
+                  <path d="M440 90 L510 90" class="agent-flow pulse-edge" />
+                  <path d="M440 110 L510 130" class="agent-flow" />
+
+                  <!-- Generated Modules -->
+                  <rect x="510" y="30" width="280" height="34" class="runtime-box" />
+                  <text x="526" y="52" class="runtime-title">Flask / FastAPI Unified HTTP Core</text>
+
+                  <rect x="510" y="74" width="280" height="34" class="runtime-box" />
+                  <text x="526" y="96" class="runtime-title">Storage Facade (S3 / Azure Blob / MinIO)</text>
+
+                  <rect x="510" y="118" width="280" height="34" class="runtime-box" />
+                  <text x="526" y="140" class="runtime-title">OpenTelemetry Traces, Metrics & Spans</text>
+                </svg>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <span class="project-impact">Published Internal Framework Standardizing AI Microservices</span>
+              <span class="project-caliper">YAML-DRIVEN CODE GENERATION</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         03. SERVICES / WHAT I DO
+         ----------------------------------------------------------------------- -->
+    <section class="section section-services" id="services" aria-labelledby="services-heading">
+      <div class="section-measuring-header" data-measure-target="services-container">
+        <div class="measure-bar">
+          <span class="measure-marker">+</span>
+          <span class="measure-title">03 // SERVICES — CORE TECHNICAL CAPABILITIES</span>
+          <span class="measure-rule"></span>
+          <span class="measure-dim" id="services-dim">[w: 100% · 4 CAPABILITY DOMAINS]</span>
+          <span class="measure-marker">+</span>
+        </div>
+      </div>
+
+      <div class="container" id="services-container">
+        <header class="section-intro">
+          <h2 class="section-headline" id="services-heading">From mathematical formulation to bulletproof services.</h2>
+          <p class="section-lede">
+            Disciplined software engineering applied to complex AI models, agent workflows, and distributed backends.
+          </p>
+        </header>
+
+        <div class="services-grid">
+          <!-- Service 1: AI & Document Intelligence -->
+          <div class="service-card">
+            <div class="service-num">01 / SPEC</div>
+            <h3 class="service-title">AI & Document Intelligence</h3>
+            <p class="service-desc">
+              Building graph-based intelligence systems for unstructured visual documents. Using Graph Attention Networks (GATs), spatial coordinate modeling, and layout-aware multimodal pipelines to classify, extract, and structure documents without brittle templates.
+            </p>
+            <ul class="service-points">
+              <li>Graph Attention Networks (GAT / GCN) for visual entity extraction</li>
+              <li>Spatial 2D geometry engines & Delaunay/K-NN neighbor graphs</li>
+              <li>OCR post-correction, layout geometry, and key-value clustering</li>
+              <li>Multilingual and non-standard invoice & financial form parsing</li>
+            </ul>
+            <div class="service-caliper">MODELS: PyTorch · PyTorch Geometric · Transformers</div>
+          </div>
+
+          <!-- Service 2: GenAI & Agentic Systems -->
+          <div class="service-card">
+            <div class="service-num">
+              02 / SPEC
+              <!-- EASTER EGG #5: Hidden in Service 02 header -->
+              <button type="button" class="easter-egg-dot" data-egg-id="5" aria-label="Discovered system node 5 of 8" title="System node detected"></button>
+            </div>
+            <h3 class="service-title">GenAI & Agentic Systems</h3>
+            <p class="service-desc">
+              Designing deterministic agentic architectures using LangChain, LangGraph, and RAG pipelines. Grounding LLMs with strict SQL tree parsing, vector databases, and tool-calling execution loops to eliminate hallucinations in enterprise workflows.
+            </p>
+            <ul class="service-points">
+              <li>Multi-agent state machines with LangGraph supervisor patterns</li>
+              <li>Natural language to SQL with AST syntax verification</li>
+              <li>Enterprise RAG with dense vector retrieval (pgvector / pg_embedding)</li>
+              <li>Structured output schemas via Pydantic & deterministic tool routing</li>
+            </ul>
+            <div class="service-caliper">AGENTS: LangGraph · LangChain · pgvector · Pydantic</div>
+          </div>
+
+          <!-- Service 3: Backend & Architecture -->
+          <div class="service-card">
+            <div class="service-num">03 / SPEC</div>
+            <h3 class="service-title">Backend & Architecture</h3>
+            <p class="service-desc">
+              Engineering high-throughput, clean backend systems using C# (.NET / ASP.NET) and Python (FastAPI / Flask). Applying Clean, Onion, and Hexagonal architectures with domain-driven boundaries, testability, and zero circular dependencies.
+            </p>
+            <ul class="service-points">
+              <li>Clean, Onion, and Hexagonal architectural patterns</li>
+              <li>C# & ASP.NET Core enterprise microservice development</li>
+              <li>Python asynchronous REST APIs with FastAPI & Flask</li>
+              <li>PostgreSQL, pgvector, Apache AGE graph querying & relational design</li>
+            </ul>
+            <div class="service-caliper">BACKEND: C# · ASP.NET · Python · Clean Architecture</div>
+          </div>
+
+          <!-- Service 4: Developer Platforms -->
+          <div class="service-card">
+            <div class="service-num">04 / SPEC</div>
+            <h3 class="service-title">Developer Platforms</h3>
+            <p class="service-desc">
+              Standardizing developer productivity and operational observability. Developing CLI scaffolding generators, reusable NuGet and Python packages, multi-cloud storage abstractions, and standardized OpenTelemetry distributed tracing spans.
+            </p>
+            <ul class="service-points">
+              <li>YAML-driven microservice code generators (nd-sdk)</li>
+              <li>Internal NuGet libraries and shared Python packages</li>
+              <li>Unified storage adapters: AWS S3, Azure Blob, MinIO</li>
+              <li>OpenTelemetry distributed tracing, metrics, and Prometheus spans</li>
+            </ul>
+            <div class="service-caliper">PLATFORM: Scaffolding · NuGet · S3/Blob · OpenTelemetry</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         04. JOURNEY (TIMELINE)
+         ----------------------------------------------------------------------- -->
+    <section class="section section-journey" id="journey" aria-labelledby="journey-heading">
+      <div class="section-measuring-header" data-measure-target="journey-container">
+        <div class="measure-bar">
+          <span class="measure-marker">+</span>
+          <span class="measure-title">04 // JOURNEY — CAREER TIMELINE AT NOVACIS DIGITAL</span>
+          <span class="measure-rule"></span>
+          <span class="measure-dim" id="journey-dim">[w: 100% · MAR 2024 → PRESENT]</span>
+          <span class="measure-marker">+</span>
+        </div>
+      </div>
+
+      <div class="container" id="journey-container">
+        <header class="section-intro">
+          <h2 class="section-headline" id="journey-heading">A rapid, high-ownership progression.</h2>
+          <p class="section-lede">
+            Promoted through three successive roles at Novacis Digital, evolving from research prototype developer to owning core AI services and leading engineers.
+          </p>
+        </header>
+
+        <div class="timeline-wrapper">
+          <!-- Timeline Entry 1: Senior Software Engineer -->
+          <article class="timeline-entry current-role">
+            <div class="timeline-meta">
+              <span class="timeline-date">May 2026 — Present</span>
+              <span class="timeline-status-badge">CURRENT ROLE</span>
+            </div>
+            <div class="timeline-marker">
+              <span class="marker-dot active-dot"></span>
+              <span class="marker-stem"></span>
+            </div>
+            <div class="timeline-content">
+              <h3 class="timeline-role">Senior Software Engineer</h3>
+              <div class="timeline-company">Novacis Digital · Madurai, India</div>
+              <p class="timeline-summary">
+                Owns AI Services within the core Intelligent Document Processing (IDP) product suite. Leads a team of two engineers, directing architectural decisions for graph-based document parsing, model serving pipelines, and resilient cloud integration.
+              </p>
+              <ul class="timeline-highlights">
+                <li>Directs technical roadmap for AnyDoc and production GNN document extraction microservices</li>
+                <li>Mentors team members on clean backend boundaries, code quality, and testing standards</li>
+                <li>Architects high-availability multi-cloud storage interfaces and OpenTelemetry instrumentation</li>
+              </ul>
+              <div class="timeline-caliper-tag">OWNERSHIP: Core IDP AI Services · Team Lead (2 Engineers)</div>
+            </div>
+          </article>
+
+          <!-- Timeline Entry 2: Software Engineer -->
+          <article class="timeline-entry">
+            <div class="timeline-meta">
+              <span class="timeline-date">Sep 2025 — Apr 2026</span>
+              <span class="timeline-duration">8 Months</span>
+            </div>
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+              <span class="marker-stem"></span>
+            </div>
+            <div class="timeline-content">
+              <h3 class="timeline-role">Software Engineer</h3>
+              <div class="timeline-company">Novacis Digital · Madurai, India</div>
+              <p class="timeline-summary">
+                Engineered core document processing modules, spatial neighbor detection algorithms, and LLM-powered natural language database querying tools.
+              </p>
+              <ul class="timeline-highlights">
+                <li>Built Neighbour Detection graph engine for spatial 2D proximity representation</li>
+                <li>Implemented Convo AI Search leveraging LangChain/LangGraph agents and SQL AST verification</li>
+                <li>Created rule-augmented fuzzy extraction engines (QDX and WTC Lite)</li>
+              </ul>
+              <div class="timeline-caliper-tag">FOCUS: Graph Systems · LangGraph Agents · Python/C# Backend</div>
+            </div>
+          </article>
+
+          <!-- Timeline Entry 3: AI Developer Trainee -->
+          <article class="timeline-entry">
+            <div class="timeline-meta">
+              <span class="timeline-date">Mar 2024 — Aug 2025</span>
+              <span class="timeline-duration">
+                1 Year 6 Months
+                <!-- EASTER EGG #6: Hidden in trainee date -->
+                <button type="button" class="easter-egg-dot" data-egg-id="6" aria-label="Discovered system node 6 of 8" title="System node detected"></button>
+              </span>
+            </div>
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+            </div>
+            <div class="timeline-content">
+              <h3 class="timeline-role">AI Developer Trainee</h3>
+              <div class="timeline-company">Novacis Digital · Madurai, India</div>
+              <p class="timeline-summary">
+                Progressed with three consecutive performance-based hikes due to exceptional delivery in research prototyping, document graph experimentation, and production SDK scaffolding.
+              </p>
+              <ul class="timeline-highlights">
+                <li>Authored and published the <code>nd-sdk</code> microservice scaffolding framework</li>
+                <li>Prototyped initial Graph Attention Network formulations for template-free invoice parsing</li>
+                <li>Awarded three merit-driven performance appraisals for technical excellence and impact</li>
+              </ul>
+              <div class="timeline-caliper-tag">MERIT: 3 Performance-Based Hikes · Published nd-sdk Scaffolding</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         05. STACK SECTION (GROUPED TECHNICAL FOUNDATION)
+         ----------------------------------------------------------------------- -->
+    <section class="section section-stack" id="stack" aria-labelledby="stack-heading">
+      <div class="section-measuring-header" data-measure-target="stack-container">
+        <div class="measure-bar">
+          <span class="measure-marker">+</span>
+          <span class="measure-title">05 // STACK — PRODUCTION TOOLS & TECHNOLOGIES</span>
+          <span class="measure-rule"></span>
+          <span class="measure-dim" id="stack-dim">[w: 100% · 6 TECHNICAL GROUPS]</span>
+          <span class="measure-marker">+</span>
+        </div>
+      </div>
+
+      <div class="container" id="stack-container">
+        <header class="section-intro">
+          <h2 class="section-headline" id="stack-heading">The exact toolchain in production.</h2>
+          <p class="section-lede">
+            Technologies selected for mathematical expressiveness, runtime predictability, and high throughput. Hover over any node to inspect context.
+          </p>
+        </header>
+
+        <div class="stack-groups-grid">
+          <!-- Group 1: Core Languages -->
+          <div class="stack-group-card">
+            <div class="group-header">
+              <span class="group-num">01</span>
+              <h3 class="group-title">Core Languages</h3>
+            </div>
+            <ul class="stack-items-list">
+              <li class="stack-item" data-tech="python">
+                <span class="item-name">Python</span>
+                <span class="item-context">Deep learning, PyG, FastAPI, data pipelines</span>
+              </li>
+              <li class="stack-item" data-tech="csharp">
+                <span class="item-name">C# (.NET / ASP.NET)</span>
+                <span class="item-context">Clean architecture, enterprise backends, NuGet</span>
+              </li>
+              <li class="stack-item" data-tech="typescript">
+                <span class="item-name">TypeScript</span>
+                <span class="item-context">Frontend tooling, typed schemas, node utilities</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Group 2: Deep Learning & Graph AI -->
+          <div class="stack-group-card">
+            <div class="group-header">
+              <span class="group-num">02</span>
+              <h3 class="group-title">Deep Learning & Graph AI</h3>
+            </div>
+            <ul class="stack-items-list">
+              <li class="stack-item" data-tech="pytorch">
+                <span class="item-name">PyTorch</span>
+                <span class="item-context">Custom neural modules, tensor computations</span>
+              </li>
+              <li class="stack-item" data-tech="pyg">
+                <span class="item-name">PyTorch Geometric</span>
+                <span class="item-context">Graph Attention Networks (GAT), topological modeling</span>
+              </li>
+              <li class="stack-item" data-tech="spacy">
+                <span class="item-name">spaCy</span>
+                <span class="item-context">Entity parsing, rule tokenization, linguistics</span>
+              </li>
+              <li class="stack-item" data-tech="transformers">
+                <span class="item-name">Transformers</span>
+                <span class="item-context">Hugging Face models, layout embeddings, BERT</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Group 3: Agents & Search -->
+          <div class="stack-group-card">
+            <div class="group-header">
+              <span class="group-num">03</span>
+              <h3 class="group-title">Agents & Search</h3>
+            </div>
+            <ul class="stack-items-list">
+              <li class="stack-item" data-tech="langchain">
+                <span class="item-name">LangChain / LangGraph</span>
+                <span class="item-context">Supervisor agent loops, state graphs, NL-to-SQL</span>
+              </li>
+              <li class="stack-item" data-tech="pgvector">
+                <span class="item-name">PostgreSQL / pgvector</span>
+                <span class="item-context">Vector similarity, dense embeddings, indexing</span>
+              </li>
+              <li class="stack-item" data-tech="apache-age">
+                <span class="item-name">Apache AGE</span>
+                <span class="item-context">Graph database extensions, OpenCypher on Postgres</span>
+                <!-- EASTER EGG #7: Hidden on Apache AGE card -->
+                <button type="button" class="easter-egg-dot" data-egg-id="7" aria-label="Discovered system node 7 of 8" title="System node detected"></button>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Group 4: Backend & Frameworks -->
+          <div class="stack-group-card">
+            <div class="group-header">
+              <span class="group-num">04</span>
+              <h3 class="group-title">Backend & Frameworks</h3>
+            </div>
+            <ul class="stack-items-list">
+              <li class="stack-item" data-tech="fastapi">
+                <span class="item-name">FastAPI</span>
+                <span class="item-context">Asynchronous AI microservices, Pydantic validation</span>
+              </li>
+              <li class="stack-item" data-tech="flask">
+                <span class="item-name">Flask</span>
+                <span class="item-context">Microservice foundations in nd-sdk generator</span>
+              </li>
+              <li class="stack-item" data-tech="aspnet">
+                <span class="item-name">ASP.NET Core</span>
+                <span class="item-context">High-throughput microservices, Clean Architecture</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Group 5: Infrastructure & Cloud -->
+          <div class="stack-group-card">
+            <div class="group-header">
+              <span class="group-num">05</span>
+              <h3 class="group-title">Infrastructure & Cloud</h3>
+            </div>
+            <ul class="stack-items-list">
+              <li class="stack-item" data-tech="docker">
+                <span class="item-name">Docker</span>
+                <span class="item-context">Containerized model serving, multi-stage images</span>
+              </li>
+              <li class="stack-item" data-tech="azure">
+                <span class="item-name">Azure</span>
+                <span class="item-context">Azure Blob Storage, App Services, AI platform ops</span>
+              </li>
+              <li class="stack-item" data-tech="aws">
+                <span class="item-name">AWS</span>
+                <span class="item-context">Amazon S3, ECS, containerized deployment</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Group 6: AI-Assisted Engineering -->
+          <div class="stack-group-card">
+            <div class="group-header">
+              <span class="group-num">06</span>
+              <h3 class="group-title">AI-Assisted Dev</h3>
+            </div>
+            <ul class="stack-items-list">
+              <li class="stack-item" data-tech="claude">
+                <span class="item-name">Claude Code</span>
+                <span class="item-context">Terminal agent orchestration, refactoring, tests</span>
+              </li>
+              <li class="stack-item" data-tech="cursor">
+                <span class="item-name">Cursor</span>
+                <span class="item-context">Fast code generation, AST-aware diffing</span>
+              </li>
+              <li class="stack-item" data-tech="copilot">
+                <span class="item-name">GitHub Copilot</span>
+                <span class="item-context">Repetitive boilerplate speed, test scaffolding</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         06. STUDIO / ABOUT SECTION
+         ----------------------------------------------------------------------- -->
+    <section class="section section-about" id="about" aria-labelledby="about-heading">
+      <div class="section-measuring-header" data-measure-target="about-container">
+        <div class="measure-bar">
+          <span class="measure-marker">+</span>
+          <span class="measure-title">06 // STUDIO — ABOUT JEYESH VISHNU S</span>
+          <span class="measure-rule"></span>
+          <span class="measure-dim" id="about-dim">[w: 100% · MADURAI, TAMIL NADU]</span>
+          <span class="measure-marker">+</span>
+        </div>
+      </div>
+
+      <div class="container" id="about-container">
+        <div class="about-grid">
+          <!-- Left: First-Person Bio & Philosophy -->
+          <div class="about-bio-col">
+            <h2 class="section-headline" id="about-heading">
+              Engineering deterministic intelligence.
+            </h2>
+
+            <div class="about-bio-text">
+              <p>
+                I am a Senior Software Engineer at Novacis Digital based in Madurai, India. My work sits at the intersection of mathematical machine learning research and resilient, test-driven backend engineering.
+              </p>
+              <p>
+                In document intelligence, unstructured layouts break conventional rules. I specialize in modeling documents as spatial graphs—connecting optical characters and bounding coordinates through Graph Attention Networks (GATs) so systems understand documents topologically without being tethered to fragile templates.
+              </p>
+              <p>
+                On the backend, I believe that an AI model is only as reliable as the architecture surrounding it. I construct clean C# and Python backends with strict boundary separation (Clean/Onion/Hexagonal), declarative scaffolding, and full OpenTelemetry visibility.
+              </p>
+            </div>
+
+            <!-- Blueprint Quote Tag -->
+            <div class="about-quote-box">
+              <span class="quote-symbol">“</span>
+              <p class="quote-text">From a raw document to structured intelligence.</p>
+              <span class="quote-attr">— Jeyesh Vishnu S</span>
+            </div>
+          </div>
+
+          <!-- Right: Education, Community & Talks -->
+          <div class="about-credentials-col">
+            <!-- Education Card -->
+            <div class="cred-card">
+              <div class="cred-header">
+                <span class="cred-badge">ACADEMIC FOUNDATION</span>
+                <!-- EASTER EGG #8: Hidden in Education Card (Final Egg) -->
+                <button type="button" class="easter-egg-dot" data-egg-id="8" aria-label="Discovered system node 8 of 8 (Final Node)" title="System node detected"></button>
+              </div>
+              <h3 class="cred-title">B.Tech in Artificial Intelligence & Data Science</h3>
+              <div class="cred-institution">Kamaraj College of Engineering and Technology</div>
+              <div class="cred-meta">
+                <span class="cred-stat">CGPA: 8.6</span>
+                <span class="cred-stat">Madurai, Tamil Nadu</span>
+              </div>
+              <p class="cred-note">
+                Rigorous grounding in graph theory, linear algebra, deep learning architectures, computational geometry, and algorithmic complexity.
+              </p>
+            </div>
+
+            <!-- Community & Speaking Card -->
+            <div class="cred-card">
+              <div class="cred-header">
+                <span class="cred-badge">COMMUNITY & TALKS</span>
+              </div>
+              <h3 class="cred-title">Engineering Leadership & Knowledge Sharing</h3>
+
+              <ul class="community-list">
+                <li class="community-item">
+                  <span class="comm-bullet">⌖</span>
+                  <div class="comm-details">
+                    <strong>Microsoft Community Speaker</strong>
+                    <span class="comm-sub">Delivered technical sessions on building modern web applications with Blazor and .NET.</span>
+                  </div>
+                </li>
+                <li class="community-item">
+                  <span class="comm-bullet">⌖</span>
+                  <div class="comm-details">
+                    <strong>CipherFest Organizer</strong>
+                    <span class="comm-sub">Organized community technical hackathons and competitive engineering symposiums.</span>
+                  </div>
+                </li>
+                <li class="community-item">
+                  <span class="comm-bullet">⌖</span>
+                  <div class="comm-details">
+                    <strong>Guest Lecturer on Django</strong>
+                    <span class="comm-sub">Invited university guest lecture on production backend web architecture with Python and Django.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         07. CONTACT SECTION ("YOUR TURN.")
+         ----------------------------------------------------------------------- -->
+    <section class="section section-contact" id="contact" aria-labelledby="contact-heading">
+      <div class="section-measuring-header" data-measure-target="contact-container">
+        <div class="measure-bar">
+          <span class="measure-marker">+</span>
+          <span class="measure-title">07 // CONTACT — ENGAGEMENT SPECIFICATION</span>
+          <span class="measure-rule"></span>
+          <span class="measure-dim" id="contact-dim">[w: 100% · DIRECT COMMS]</span>
+          <span class="measure-marker">+</span>
+        </div>
+      </div>
+
+      <div class="container" id="contact-container">
+        <div class="contact-card">
+          <div class="contact-header-tag">
+            <span class="tag-status">● SYSTEM READY FOR INQUIRY</span>
+            <span class="tag-coords">9.9252° N, 78.1198° E · MADURAI, INDIA</span>
+          </div>
+
+          <!-- Big Closing Headline: "Your turn." -->
+          <h2 class="contact-big-headline" id="contact-heading">
+            Your turn<span class="signal-period">.</span>
+          </h2>
+
+          <p class="contact-subhead">
+            Have a document intelligence pipeline, a complex graph AI problem, or an enterprise backend to architect? Let's connect.
+          </p>
+
+          <!-- Primary Direct Button: mailto:jeyeshjv32@gmail.com -->
+          <div class="contact-primary-action">
+            <a href="mailto:jeyeshjv32@gmail.com" class="pill-btn pill-btn-primary contact-main-btn magnetic-btn">
+              <span>Let's talk</span>
+              <span class="btn-arrow-circle">
+                <svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden="true">
+                  <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+
+          <!-- Detailed Contact Spec Grid -->
+          <div class="contact-details-grid">
+            <!-- Email -->
+            <div class="contact-cell">
+              <span class="cell-label">DIRECT EMAIL</span>
+              <div class="cell-value-wrap">
+                <a href="mailto:jeyeshjv32@gmail.com" class="cell-link">jeyeshjv32@gmail.com</a>
+                <button type="button" class="copy-btn" data-copy="jeyeshjv32@gmail.com" title="Copy email address" aria-label="Copy email address">
+                  <span class="copy-text">COPY</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-cell">
+              <span class="cell-label">PHONE / WHATSAPP</span>
+              <div class="cell-value-wrap">
+                <a href="tel:+918428430032" class="cell-link">+91 8428430032</a>
+                <button type="button" class="copy-btn" data-copy="+918428430032" title="Copy phone number" aria-label="Copy phone number">
+                  <span class="copy-text">COPY</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Location -->
+            <div class="contact-cell">
+              <span class="cell-label">LOCATION</span>
+              <div class="cell-value-wrap">
+                <span class="cell-static">Madurai, Tamil Nadu, India</span>
+                <span class="cell-sub">Available for Global Remote Roles</span>
+              </div>
+            </div>
+
+            <!-- Socials (Marked TODO as instructed) -->
+            <div class="contact-cell">
+              <span class="cell-label">EXTERNAL REPOSITORIES & NETWORKS</span>
+              <div class="cell-social-links">
+                <span class="todo-link-wrap">
+                  <span class="todo-link">GitHub</span>
+                  <span class="todo-badge">TODO</span>
+                </span>
+                <span class="todo-sep">/</span>
+                <span class="todo-link-wrap">
+                  <span class="todo-link">LinkedIn</span>
+                  <span class="todo-badge">TODO</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       SITE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="footer-copy">© 2026 JEYESH VISHNU S. ALL RIGHTS RESERVED.</span>
+        <span class="footer-sub">ENGINEERED WITH MINIMAL HTML/CSS & GRAPH TOPOLOGY.</span>
+      </div>
+
+      <div class="footer-center">
+        <span class="footer-spec">SPEC: INK #121214 · PAPER #F4F4F1 · SIGNAL #E8203A</span>
+      </div>
+
+      <div class="footer-right">
+        <button type="button" class="footer-replay-link" id="footer-replay-btn">
+          <span>↺ Replay Build Intro</span>
+        </button>
+        <a href="#hero" class="back-to-top" aria-label="Back to top">
+          <span>TOP ↑</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       EASTER EGG MODAL: 8/8 NODES RESOLVED CELEBRATION
+       ========================================================================= -->
+  <div class="egg-modal-overlay" id="egg-modal" role="dialog" aria-modal="true" aria-labelledby="egg-modal-title" hidden>
+    <div class="egg-modal-card">
+      <div class="modal-header-caliper">
+        <span class="m-tag">[SYSTEM_GRAPH_RESOLVED :: 8/8 NODES DISCOVERED]</span>
+        <button type="button" class="modal-close-btn" id="egg-modal-close" aria-label="Close dialog">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-signal-glyph">⌖</div>
+        <h3 class="modal-title" id="egg-modal-title">Graph Fully Resolved.</h3>
+        <p class="modal-text">
+          You uncovered all 8 spatial nodes hidden across this blueprint layout.
+          You observe systems like a document intelligence engineer—connecting unseen edges between raw components.
+        </p>
+
+        <div class="modal-blueprint-data">
+          <div class="mb-row"><span>GRAPH ATTENTION SCORE:</span> <strong>1.00 (MAX_RESOLVED)</strong></div>
+          <div class="mb-row"><span>CONNECTED CLUSTERS:</span> <strong>8 / 8 DISCOVERED</strong></div>
+          <div class="mb-row"><span>NEXT DIRECTIVE:</span> <strong>BUILD RELIABLE INTELLIGENCE TOGETHER</strong></div>
+        </div>
+
+        <div class="modal-actions">
+          <a href="mailto:jeyeshjv32@gmail.com?subject=Found%20all%208%20system%20nodes!" class="pill-btn pill-btn-primary modal-cta">
+            <span>Send Direct Message</span>
+            <span class="btn-arrow-circle">
+              <svg viewBox="0 0 16 16" width="12" height="12" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+          </a>
+          <button type="button" class="pill-btn pill-btn-secondary" id="egg-modal-dismiss">Dismiss</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Toast for Copy to Clipboard & Easter Eggs -->
+  <div class="toast-notice" id="toast-notice" role="status" aria-live="polite" hidden></div>
+
+  <!-- =========================================================================
+       SCRIPTS: GSAP & ScrollTrigger (CDN with graceful vanilla fallback)
+       ========================================================================= -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
